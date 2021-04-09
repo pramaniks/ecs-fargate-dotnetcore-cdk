@@ -51,5 +51,6 @@
 ![image](https://user-images.githubusercontent.com/20775313/114186138-1e5b2080-9964-11eb-974f-a8c76772f93a.png)
 * Once aws configure is completed you can see credentials file created under your user profile **C:\Users\{username}\.aws\**
 * Open the credentials file via file editor and add **aws_session_token** attribute as well
+ * ![image](https://user-images.githubusercontent.com/20775313/114187559-c3c2c400-9965-11eb-8cfe-5cbb380d2c3d.png)
 * **THIS IS VERY IMPORTANT, WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED CREDENTIALS WHICH EXPIRES AFTER AN HOUR**
 
