@@ -20,6 +20,7 @@
 * CDK will create the following resources on AWS:
   * AWS build project.
   * AWS Code pipeline project.
+  * AWS Code deploy.
   * AWS Code build project IAM roles.
   * AWS Code pipeline IAM roles.
   * Private S3 bucket for source and build artifacts
@@ -30,4 +31,4 @@
   * Create the docher image from the build.
   * Push the docker image to AWS ECR image repository.
   * Push the build artifacts in S3 bucket.
-* The build artifacts now pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
+* The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
