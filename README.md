@@ -1,4 +1,4 @@
-# AWS ECS Cluster Fargate serverless environment
+# AWS ECS cluster fargate serverless environment
 **This document will show the high level architecture of the CI/CD pipeline using dot net core microservices based on Domain driven design pattern**
 
 # Assumptions/Prerequisites
