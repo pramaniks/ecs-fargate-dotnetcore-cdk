@@ -33,7 +33,9 @@
   * Push the build artifacts in S3 bucket.
 * The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
 
-# Deployment environment on Windows machine:
+# Creating deployment environment on windows machine:
 * **Chocolatey installation - A package manager for windows environment**
   * Open powershell as adminstrator and execute following command:
     * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+* Install dot net core 3+ version SDK `choco install dotnetcore-sdk`
+* Install Python `choco install python` , this is required to manage AWS credentials on your local machine under user directory, which will be shown in later steps
