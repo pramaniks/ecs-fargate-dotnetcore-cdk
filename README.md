@@ -1,5 +1,5 @@
 # AWS ECS Cluster Fargate launch type serverless environment
-##This document will show the high level architecture of the CI/CD pipeline using dot net core microservices based on Domain driven design pattern*
+## This document will show the high level architecture of the CI/CD pipeline using dot net core microservices based on Domain driven design pattern*
 
 # Assumptions/Prerequisites
 * All the domain projects are **.net core WEB API project types** with .net core 3.1 target framework.
