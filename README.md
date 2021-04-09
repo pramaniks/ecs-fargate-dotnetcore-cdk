@@ -17,8 +17,12 @@
 
 # What this project will do:
 * This project will be a CDK to create and deploy AWS code pipeline that will listen to any changes in the repository configured in the build project.
-* This CDK will created the build project.
-* This CDK will create the Code pipeline project.
+* CDK will create the following resources on AWS:
+  * This CDK will created the build project.
+  * This CDK will create the Code pipeline project.
+  * This CDK will create Code build project IAM roles.
+  * This CDK will create Code pipeline IAM roles.
+  * This CDK will create S3 bucket for source and build artifats
 * This project will also specify how to create and abstract docker image files for each microservice domain project independent of the service itself.
 * This project will also demonstrate how to create buildspec.yml file for each microservice project which will do following operations:
   * Build the .net core project with the restoring packages.
