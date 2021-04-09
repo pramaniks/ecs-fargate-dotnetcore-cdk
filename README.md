@@ -2,7 +2,7 @@
 **This document will show the high level architecture of the CI/CD pipeline using dot net core microservices based on Domain driven design pattern**
 
 # Assumptions/ Prerequisites:
-* All the domain projects are **.net core WEB API project types** with .net core 3.1 target framework.
+* All the domain projects are **.net core web API project types** with .net core 3.1 target framework.
 * All the services will be deployed to existing ECS cluster on Fargate launch type which is a serverless offering of ECS cluster.
 * AWS environment readiness:
   * VPC is created.
