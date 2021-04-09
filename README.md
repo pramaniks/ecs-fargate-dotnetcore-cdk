@@ -35,7 +35,7 @@
 
 # Creating deployment environment on windows machine:
 * **Chocolatey installation - A package manager for windows environment**
-Please open powershell as an administrator to execute following commands:
+###### Please open powershell as an administrator to execute following commands:
   * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
  * Install dot net core 3+ version SDK using following command
    *  `choco install dotnetcore-sdk`
