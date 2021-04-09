@@ -42,6 +42,6 @@
 * Install Python using folllowing command:
    * `choco install python`
 * Install nodejs/ npm using command:
-   * `choco install -y --force nodejs` and check version using command `node -v`
+   * `choco install -y --force nodejs` and check version using command `node -v`after installation.
  * Install AWS CDK globally using following command:
-   * `npm install -g aws-cdk` and check the version using command `cdk --version`
+   * `npm install -g aws-cdk` and check the version using command `cdk --version` after installation.
