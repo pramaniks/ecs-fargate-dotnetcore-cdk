@@ -22,7 +22,7 @@
   * AWS Code pipeline project.
   * AWS Code build project IAM roles.
   * AWS Code pipeline IAM roles.
-  * Private S3 bucket for source and build artifats
+  * Private S3 bucket for source and build artifacts
 * This project will also specify how to create and abstract docker image files for each microservice domain project independent of the service itself.
 * This project will also demonstrate how to create buildspec.yml file for each microservice project which will do following operations:
   * Build the .net core project with the restoring packages.
