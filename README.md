@@ -21,9 +21,9 @@
 * This CDK will create the Code pipeline project
 * This project will also specify how to create and abstract docker image files for each microservice domain project independent of the service itself
 * This project will also demonstrate how to create buildspec.yml file for each microservice project which will do following operations:
- * Build the .net core project with the restoring packagaes
- * Generate the build artifacts
- * Create the docher image from the build
- * Push the docker image to AWS ECR image repository
- * Push the build artifacts in S3 bucket
+  * Build the .net core project with the restoring packagaes
+  * Generate the build artifacts
+  * Create the docher image from the build
+  * Push the docker image to AWS ECR image repository
+  * Push the build artifacts in S3 bucket
 * The build artifacts now pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment
