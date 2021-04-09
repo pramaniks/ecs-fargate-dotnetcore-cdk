@@ -34,8 +34,7 @@
 * The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
 
 # Overall Architecture diagram for deploying microservices on AWS ECS cluster:
-![ECSCluster](https://user-images.githubusercontent.com/20775313/114197218-be6a7700-996f-11eb-807c-5ddb7ae6d0aa.jpeg)
-
+![ECSCluster](https://user-images.githubusercontent.com/20775313/114198015-83b50e80-9970-11eb-82dc-e8cbc1a069dd.jpeg)
 
 # Creating deployment environment on windows machine:
  ###### **Please open powershell as an administrator to execute following commands:**
