@@ -68,7 +68,7 @@
 ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
 
 * The cloud deployment settings looks like this:
-  * `    {&nbsp;
+  *     {&nbsp;
   "    EnvironmentQualifier" :  "Dev",&nbsp;
       "Dev": {
         "AccountId": "714911308443",
@@ -91,7 +91,7 @@
           "BranchName": "master"
         }
       }
-    }`
+    }
 
 * After successful build start deploying the stack one by one in the following order:
    * `cdk deploy SecurityGroupStack`
