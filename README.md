@@ -67,7 +67,7 @@
 * Run command `dotnet build`
 ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
 
-* The cloud deployment settings looks like this:\
+* The cloud deployment settings json file looks like this:\
 {\
   "EnvironmentQualifier" :  "Dev"\
       "Dev": {\
@@ -134,33 +134,33 @@
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
 
-* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s)
-` var CfnServiceProps = new CfnServiceProps
-            {
-                Cluster = _Request.ECSClusterName,
-                LaunchType = "FARGATE",
-                ServiceName = Request.ServiceName,
-                TaskDefinition = Request.TaskDefinition,
-                DesiredCount = 1,
-                LoadBalancers = new object[1]
-                 {
-                    new LoadBalancerProperty
-                    {
-                        ContainerName = Request.ContainerName,
-                        ContainerPort = 5000,
-                        TargetGroupArn = $"arn:aws:elasticloadbalancing:{_Request.Region}:{_Request.AccountId}:targetgroup/{Request.TargetGroupId}"
-                    }
-                 },
-                NetworkConfiguration = new NetworkConfigurationProperty
-                {
-                    AwsvpcConfiguration = new AwsVpcConfigurationProperty
-                    {
-                        AssignPublicIp = "ENABLED",
-                        SecurityGroups = new string[] { _Request.EcsServiceSecurityGroupId },
-                        Subnets = _Request.BackendSubnetIdList.ToArray()
-                    }
-                }
-            };`
+* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s)\
+var CfnServiceProps = new CfnServiceProps\
+            {\
+                Cluster = _Request.ECSClusterName,\
+                LaunchType = "FARGATE",\
+                ServiceName = Request.ServiceName,\
+                TaskDefinition = Request.TaskDefinition,\
+                DesiredCount = 1,\
+                LoadBalancers = new object[1]\
+                 {\
+                    new LoadBalancerProperty\
+                    {\
+                        ContainerName = Request.ContainerName,\
+                        ContainerPort = 5000,\
+                        TargetGroupArn = $"arn:aws:elasticloadbalancing:{_Request.Region}:{_Request.AccountId}:targetgroup/{Request.TargetGroupId}"\
+                    }\
+                 },\
+                NetworkConfiguration = new NetworkConfigurationProperty\
+                {\
+                    AwsvpcConfiguration = new AwsVpcConfigurationProperty\
+                    {\
+                        AssignPublicIp = "ENABLED",\
+                        SecurityGroups = new string[] { _Request.EcsServiceSecurityGroupId },\
+                        Subnets = _Request.BackendSubnetIdList.ToArray()\
+                    }\
+                }\
+            };
             
  * Now the service is running the task with the desired count successfully without any issues
  
