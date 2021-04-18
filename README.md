@@ -64,3 +64,6 @@
   "app": "dotnet run -p ecsclustercdk/ecsclustercdk.csproj",
   "profile" : "default"
    }`
+  * Run command `dotnet build`
+    * ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
+
