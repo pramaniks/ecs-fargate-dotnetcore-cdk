@@ -109,7 +109,7 @@
    
    ![RolesStack](https://user-images.githubusercontent.com/20775313/115148363-d1bac800-a07c-11eb-9977-e1438c1caa20.PNG)
    
-   * `RolesPolicyStack`
+   * `cdk deploy RolesPolicyStack`
 
    ![RolesPolicyStack](https://user-images.githubusercontent.com/20775313/115148376-e39c6b00-a07c-11eb-8370-1600a7c68768.PNG)
    
