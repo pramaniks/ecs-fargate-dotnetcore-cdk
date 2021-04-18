@@ -66,7 +66,8 @@
    }`
 * Run command `dotnet build`
 ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
-* The cloud deployment setitngs looks like this:
+
+* The cloud deployment settings looks like this:
   * `{
   "EnvironmentQualifier" :  "Dev",
   "Dev": {
@@ -94,9 +95,91 @@
 
 * After successful build start deploying the stack one by one in the following order:
    * `cdk deploy SecurityGroupStack`
+   
    ![SecurityGroupStack](https://user-images.githubusercontent.com/20775313/115148268-6f61c780-a07c-11eb-8327-e324d46b4e45.PNG)
    * `cdk deploy KMSKeyStack`
+   
    ![KMSKeyStack](https://user-images.githubusercontent.com/20775313/115148289-899ba580-a07c-11eb-9d84-095f6cd0ec41.PNG)
+   
+   * `cdk deploy BucketStack`
+   
+   ![S3BucketStack](https://user-images.githubusercontent.com/20775313/115148348-be0f6180-a07c-11eb-90b6-bc2177302e25.PNG)
+   
+   * `cdk deploy RolesStack`
+   
+   ![RolesStack](https://user-images.githubusercontent.com/20775313/115148363-d1bac800-a07c-11eb-9977-e1438c1caa20.PNG)
+   
+   * `RolesPolicyStack`
+
+   ![RolesPolicyStack](https://user-images.githubusercontent.com/20775313/115148376-e39c6b00-a07c-11eb-8370-1600a7c68768.PNG)
+   
+   * `cdk deploy TaskDefinitionStack`
+   
+   ![TaskDefinitionStack](https://user-images.githubusercontent.com/20775313/115148392-fca51c00-a07c-11eb-81a0-86841496d091.PNG)
+   
+   * `cdk deploy ECSClusterStack`
+
+   ![ECSClusterStack](https://user-images.githubusercontent.com/20775313/115148414-134b7300-a07d-11eb-96c2-fd00d27e14e8.PNG)
+   
+   * `cdk deploy ECSServiceStack`. **Please note here, the task desired count for new service always keep as 0 to avoid immediate service start**
+   
+   ![ECSServiceStack](https://user-images.githubusercontent.com/20775313/115148454-4e4da680-a07d-11eb-9b9b-ee2e7a1af5d5.PNG)
+   
+   * `cdk deploy ECSCodepipelineStack`
+
+   ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
+   
+* Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , as the service was deployed with task desired count as "0"
+
+![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
+![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
+
+* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s)
+` var CfnServiceProps = new CfnServiceProps
+            {
+                Cluster = _Request.ECSClusterName,
+                LaunchType = "FARGATE",
+                ServiceName = Request.ServiceName,
+                TaskDefinition = Request.TaskDefinition,
+                DesiredCount = 1,
+                LoadBalancers = new object[1]
+                 {
+                    new LoadBalancerProperty
+                    {
+                        ContainerName = Request.ContainerName,
+                        ContainerPort = 5000,
+                        TargetGroupArn = $"arn:aws:elasticloadbalancing:{_Request.Region}:{_Request.AccountId}:targetgroup/{Request.TargetGroupId}"
+                    }
+                 },
+                NetworkConfiguration = new NetworkConfigurationProperty
+                {
+                    AwsvpcConfiguration = new AwsVpcConfigurationProperty
+                    {
+                        AssignPublicIp = "ENABLED",
+                        SecurityGroups = new string[] { _Request.EcsServiceSecurityGroupId },
+                        Subnets = _Request.BackendSubnetIdList.ToArray()
+                    }
+                }
+            };`
+            
+ * Now the service is running the task with the desired count successfully without any issues
+ 
+ ![ClusterRunningService](https://user-images.githubusercontent.com/20775313/115148619-0c713000-a07e-11eb-93dd-7fceb18d3c28.PNG)
+ 
+ * Now go to the code pipeline for that service and click on Release Change, now the code pipeline executes all the steps successfully.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
