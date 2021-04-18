@@ -68,30 +68,30 @@
 ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
 
 * The cloud deployment settings looks like this:
-  * `{
-  "EnvironmentQualifier" :  "Dev",
-  "Dev": {
-    "AccountId": "714911308443",
-    "Region": "us-east-2",
-    "VpcId": "vpc-06a4c67ee500fdb59",
-    "FrontendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
-    "BackendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
-    "DatabaseSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
-    "CodePipelineBucketName": "samplecodepipelinebucket",
-    "CodePipelineServiceRoleName": "SampleCodePipelineRole",
-    "CodeBuildServiceRoleName": "SampleCodeBuildRole",
-    "TaskExecutionRoleName": "SampleTaskRole",
-    "BucketKmsKeyGuid": "c2dce8e8-bfc6-4b1f-9090-97045db83d2a",
-    "CodeBuildSecurityGroupId": "sg-02fc7f9d4c8b1bd55",
-    "ECSServiceSecurityGroupId": "sg-0664a4574b1dfb4c6",
-    "ECSClusterName": "samplecluster",
-    "RepositoryConnection": {
-      "ConnectionArn": "arn:aws:codestar-connections:us-east-2:714911308443:connection/84e3bd57-26c0-41e8-a7db-c528e03f7beb",
-      "RepositoryId": "pramaniks/dotnetcore-microservices-webapi",
-      "BranchName": "master"
-    }
-  }
-}`
+  * `    {
+  "    EnvironmentQualifier" :  "Dev",
+      "Dev": {
+        "AccountId": "714911308443",
+        "Region": "us-east-2",
+        "VpcId": "vpc-06a4c67ee500fdb59",
+        "FrontendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
+        "BackendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
+        "DatabaseSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
+        "CodePipelineBucketName": "samplecodepipelinebucket",
+        "CodePipelineServiceRoleName": "SampleCodePipelineRole",
+        "CodeBuildServiceRoleName": "SampleCodeBuildRole",
+        "TaskExecutionRoleName": "SampleTaskRole",
+        "BucketKmsKeyGuid": "c2dce8e8-bfc6-4b1f-9090-97045db83d2a",
+        "CodeBuildSecurityGroupId": "sg-02fc7f9d4c8b1bd55",
+        "ECSServiceSecurityGroupId": "sg-0664a4574b1dfb4c6",
+        "ECSClusterName": "samplecluster",
+        "RepositoryConnection": {
+          "ConnectionArn": "arn:aws:codestar-connections:us-east-2:714911308443:connection/84e3bd57-26c0-41e8-a7db-c528e03f7beb",
+          "RepositoryId": "pramaniks/dotnetcore-microservices-webapi",
+          "BranchName": "master"
+        }
+      }
+    }`
 
 * After successful build start deploying the stack one by one in the following order:
    * `cdk deploy SecurityGroupStack`
