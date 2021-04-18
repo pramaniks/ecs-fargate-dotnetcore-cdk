@@ -56,3 +56,11 @@
 * Open the credentials file via file editor and add **aws_session_token** attribute as well. **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION         CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
 
+# Deployment
+* cd to cdk.json file under src directory
+  * cd C:\ecs-fargate-dotnetcore-cdk\src\ecsclustercdk\
+  * cdk.json file has the information of which project needs to be built
+  * `{
+  "app": "dotnet run -p ecsclustercdk/ecsclustercdk.csproj",
+  "profile" : "default"
+   }`
