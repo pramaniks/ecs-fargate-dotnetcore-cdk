@@ -2,7 +2,7 @@
   "EnvironmentQualifier" :  "Dev",
   "Dev": {
     "AccountId": "714911308443",
-    "Region": "us-east-2",    
+    "Region": "us-east-2",
     "VpcId": "vpc-06a4c67ee500fdb59",
     "FrontendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
     "BackendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],
@@ -11,7 +11,7 @@
     "CodePipelineServiceRoleName": "SampleCodePipelineRole",
     "CodeBuildServiceRoleName": "SampleCodeBuildRole",
     "TaskExecutionRoleName": "SampleTaskRole",
-    "BucketKmsKeyGuid": "f10d05bd-3e3a-475b-be0c-39748b91f444",
+    "BucketKmsKeyGuid": "c2dce8e8-bfc6-4b1f-9090-97045db83d2a",
     "CodeBuildSecurityGroupId": "sg-02fc7f9d4c8b1bd55",
     "ECSServiceSecurityGroupId": "sg-0664a4574b1dfb4c6",
     "ECSClusterName": "samplecluster",

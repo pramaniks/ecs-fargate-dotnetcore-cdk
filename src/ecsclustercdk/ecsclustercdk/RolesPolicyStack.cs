@@ -6,178 +6,29 @@ using System.Text;
 
 namespace Ecsclustercdk
 {
-    public class CreateRolesStackRequest
+    public class CreateRolesPolicyStackRequest
     {
         public string AccountId { get; set; }
+        public string Region { get; set; }
         public string CodePipelineBucketKMSKeyGuid { get; set; }
-        public string CodeBuildServiceRoleName { get; set; }
         public string CodePipelineBucketName { get; set; }
         public string CodePipelineServiceRoleName { get; set; }
-        public string TaskExecutionRoleName { get; internal set; }
+        public string CodeBuildServiceRoleName { get; set; }
+        public string TaskExecutionRoleName { get; set; }
     }
-    public class RolesStack : Stack
-    {
-        private CreateRolesStackRequest _Request;
-        private CfnRole _CfnCodeBuildRole;
-        private CfnRole _CfnCodePipelineRole;
-        private CfnRole _CfnTaskRole;
 
-        internal RolesStack(Construct scope, string id, CreateRolesStackRequest Request, IStackProps props = null) : base(scope, id, props)
+    public class RolesPolicyStack : Stack
+    {
+        private CreateRolesPolicyStackRequest _Request;
+
+        internal RolesPolicyStack(Construct scope, string id, CreateRolesPolicyStackRequest Request, IStackProps props = null) : base(scope, id, props)
         {
             _Request = Request;
 
-            createCodeBuildServiceRole();
-            createCodePipelineServiceRole();
-            //createBucketKmsKeyPolicy();
-            //createCodePipelinePolicy();
-            //createCodePipelineS3Policy();
-            createTaskRole();
-            //createTaskPolicies();
-        }
-
-        private void createCodeBuildServiceRole()
-        {
-            var assumeRolePolicyDocument = new PolicyDocument();
-            var assumeRolepolicyStatementProps = new PolicyStatementProps
-            {
-                Actions = new string[] { "sts:AssumeRole" },
-                Effect = Effect.ALLOW,
-                Principals = new ServicePrincipal[] { new ServicePrincipal("codebuild.amazonaws.com") }
-            };
-
-            var assumeRolePolicyStatement = new PolicyStatement(assumeRolepolicyStatementProps);
-            assumeRolePolicyDocument.AddStatements(assumeRolePolicyStatement);
-
-            var cfnRoleProps = new CfnRoleProps
-            {
-                RoleName = _Request.CodeBuildServiceRoleName,
-                AssumeRolePolicyDocument = assumeRolePolicyDocument,
-                Path = "/service-role/",
-                ManagedPolicyArns = new string[] { "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser" },
-            };
-
-            _CfnCodeBuildRole = new CfnRole(this, _Request.CodeBuildServiceRoleName, cfnRoleProps);
-
-            var logstmt = new PolicyStatement(new PolicyStatementProps
-            {
-                Actions = new string[] {
-                 "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:PutLogEvents" },
-                Effect = Effect.ALLOW,
-            });
-            logstmt.AddAllResources();
-
-
-            var ec2stmt = new PolicyStatement(new PolicyStatementProps
-            {
-                Actions = new string[] { "ec2:*",
-                 "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:PutLogEvents",
-                 "lambda:*",
-                "cloudformation:*",
-                     "iam:PassRole",
-                "lambda:*",
-                "cloudformation:*" },
-                Effect = Effect.ALLOW,
-            });
-
-            ec2stmt.AddAllResources();
-            new CfnPolicy(this, "SampleCodeBuildEC2Policy", new CfnPolicyProps
-            {
-                PolicyName = "SampleCodeBuildEC2Policy",
-                PolicyDocument = new PolicyDocument(new PolicyDocumentProps
-                {
-                    Statements = new PolicyStatement[] { ec2stmt }
-                }),
-                Roles = new string[] { _CfnCodeBuildRole.Ref }
-            });
-
-
-
-            var s3stmt = new PolicyStatement(new PolicyStatementProps
-            {
-                Actions = new string[] {
-                 "s3:PutObject",
-                "s3:GetObject",
-                "s3:GetBucketAcl",
-                "s3:GetBucketLocation",
-                "s3:GetObjectVersion" },
-                Effect = Effect.ALLOW,
-            });
-
-            s3stmt.AddResources($"arn:aws:s3:::{_Request.CodePipelineBucketName}");
-            s3stmt.AddResources($"arn:aws:s3:::{_Request.CodePipelineBucketName}/*");
-
-
-            new CfnPolicy(this, "SampleCodeBuildLogPolicy", new CfnPolicyProps
-            {
-                PolicyName = "SampleCodeBuildLogPolicy",
-                PolicyDocument = new PolicyDocument(new PolicyDocumentProps
-                {
-                    Statements = new PolicyStatement[] { logstmt }
-                }),
-                Roles = new string[] { _CfnCodeBuildRole.Ref }
-            });
-
-            new CfnPolicy(this, "SampleCodeBuildS3Policy", new CfnPolicyProps
-            {
-                PolicyName = "SampleCodeBuildS3Policy",
-                PolicyDocument = new PolicyDocument(new PolicyDocumentProps
-                {
-                    Statements = new PolicyStatement[] { s3stmt }
-                }),
-                Roles = new string[] { _CfnCodeBuildRole.Ref }
-            });
-        }
-
-        private void createCodePipelineServiceRole()
-        {
-            var assumeRolePolicyDocument = new PolicyDocument();
-            var assumeRolepolicyStatementProps = new PolicyStatementProps
-            {
-                Actions = new string[] { "sts:AssumeRole" },
-                Effect = Effect.ALLOW,
-                Principals = new ServicePrincipal[] { new ServicePrincipal("codepipeline.amazonaws.com") }
-            };
-
-            var assumeRolePolicyStatement = new PolicyStatement(assumeRolepolicyStatementProps);
-            assumeRolePolicyDocument.AddStatements(assumeRolePolicyStatement);
-
-
-            var cfnRoleProps = new CfnRoleProps
-            {
-                RoleName = _Request.CodePipelineServiceRoleName,
-                AssumeRolePolicyDocument = assumeRolePolicyDocument,
-                Path = "/service-role/"
-            };
-
-            _CfnCodePipelineRole = new CfnRole(this, _Request.CodePipelineServiceRoleName, cfnRoleProps);
-
-            var codestartstmt = new PolicyStatement(new PolicyStatementProps
-            {
-                Actions = new string[] { "codestar-connections:UseConnection", "codebuild:BatchGetBuilds",
-                "codebuild:StartBuild",
-                "codebuild:BatchGetBuildBatches",
-                "codebuild:StartBuildBatch"
-                },
-                Effect = Effect.ALLOW,
-            });
-
-            codestartstmt.AddAllResources();
-            var policyDocumentProps = new PolicyDocumentProps
-            {
-                Statements = new PolicyStatement[] { codestartstmt }
-            };
-            var cfnPolicyProps = new CfnPolicyProps
-            {
-                PolicyName = "SampleCodeConnectionPolicy",
-                PolicyDocument = new PolicyDocument(policyDocumentProps),
-                Roles = new string[] { _CfnCodePipelineRole.Ref }
-            };
-
-            var cfnPolicy = new CfnPolicy(this, "SampleCodeConnectionPolicy", cfnPolicyProps);
+            createBucketKmsKeyPolicy();
+            createCodePipelinePolicy();
+            createCodePipelineS3Policy();
+            createTaskPolicies();
         }
 
         private void createCodePipelineS3Policy()
@@ -190,7 +41,7 @@ namespace Ecsclustercdk
 
             s3stmt.AddResources($"arn:aws:s3:::{_Request.CodePipelineBucketName}");
             s3stmt.AddResources($"arn:aws:s3:::{_Request.CodePipelineBucketName}/*");
-           
+
             new CfnPolicy(this, "SampleCodePipelineS3BucketPolicy", new CfnPolicyProps
             {
                 PolicyName = "SampleCodePipelineS3BucketPolicy",
@@ -198,7 +49,7 @@ namespace Ecsclustercdk
                 {
                     Statements = new PolicyStatement[] { s3stmt }
                 }),
-                Roles = new string[] { _CfnCodePipelineRole.Ref }
+                Roles = new string[] { _Request.CodePipelineServiceRoleName}
             });
 
         }
@@ -309,7 +160,7 @@ namespace Ecsclustercdk
             {
                 PolicyName = "samplecodepipelinepolicy",
                 PolicyDocument = new PolicyDocument(policyDocumentProps),
-                Roles = new string[] { _CfnCodePipelineRole.Ref }
+                Roles = new string[] { _Request.CodePipelineServiceRoleName }
             };
 
             var cfnPolicy = new CfnPolicy(this, "samplecodepipelinepolicy", cfnPolicyProps);
@@ -332,7 +183,7 @@ namespace Ecsclustercdk
             };
 
             var kmsPolicyStatement = new PolicyStatement(kmsStatementProps);
-            kmsPolicyStatement.AddResources($"arn:aws:kms:us-east-2:{_Request.AccountId}:key/{_Request.CodePipelineBucketKMSKeyGuid}");           
+            kmsPolicyStatement.AddResources($"arn:aws:kms:{_Request.Region}:{_Request.AccountId}:key/{_Request.CodePipelineBucketKMSKeyGuid}");
 
 
             var policyDocumentProps = new PolicyDocumentProps
@@ -343,36 +194,11 @@ namespace Ecsclustercdk
             {
                 PolicyName = "SampleBucketKmsKeyPolicy",
                 PolicyDocument = new PolicyDocument(policyDocumentProps),
-                Roles = new string[] {_CfnCodeBuildRole.Ref,
-                    _CfnCodePipelineRole.Ref}
+                Roles = new string[] {_Request.CodePipelineServiceRoleName,
+                    _Request.CodeBuildServiceRoleName}
             };
 
             var cfnPolicy = new CfnPolicy(this, "SampleBucketKmsKeyPolicy", cfnPolicyProps);
-        }
-
-        private void createTaskRole()
-        {
-            var assumeRolePolicyDocument = new PolicyDocument();
-            var assumeRolepolicyStatementProps = new PolicyStatementProps
-            {
-                Actions = new string[] { "sts:AssumeRole" },
-                Effect = Effect.ALLOW,
-                Principals = new ServicePrincipal[] { new ServicePrincipal("ecs-tasks.amazonaws.com") }
-            };
-
-            var assumeRolePolicyStatement = new PolicyStatement(assumeRolepolicyStatementProps);
-            assumeRolePolicyDocument.AddStatements(assumeRolePolicyStatement);
-
-
-            var cfnRoleProps = new CfnRoleProps
-            {
-                RoleName = _Request.TaskExecutionRoleName,
-                AssumeRolePolicyDocument = assumeRolePolicyDocument,
-                ManagedPolicyArns = new string[] { "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser" ,
-                    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"},
-            };
-
-            _CfnTaskRole = new CfnRole(this, _Request.TaskExecutionRoleName, cfnRoleProps);
         }
 
         private void createTaskPolicies()
@@ -393,8 +219,8 @@ namespace Ecsclustercdk
                  "kms:Decrypt"
             };
 
-            createPolicies(cloudwatchactions, "ecsSamplecloudwatchlogspolicy", _CfnTaskRole.Ref);
-            createPolicies(secretActions, "ecsSamplesecretpolicy", _CfnTaskRole.Ref);
+            createPolicies(cloudwatchactions, "ecsSamplecloudwatchlogspolicy", _Request.TaskExecutionRoleName);
+            createPolicies(secretActions, "ecsSamplesecretpolicy", _Request.TaskExecutionRoleName);
         }
 
         private void createPolicies(string[] actions, string policyName, string roleReference)
@@ -419,5 +245,6 @@ namespace Ecsclustercdk
 
             var cfnPolicy = new CfnPolicy(this, policyName, cfnPolicyProps);
         }
+
     }
 }

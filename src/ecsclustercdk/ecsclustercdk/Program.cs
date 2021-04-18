@@ -18,6 +18,7 @@ namespace Ecsclustercdk
             createKmsKeyStack("KMSKeyStack");
             createBucketStack("BucketStack");
             createRolesStack("RolesStack");
+            createRolesPolicyStack("RolesPolicyStack");
             createTaskDefinitionStack("TaskDefinitionStack");
             createECSClusterStack("ECSClusterStack");
             createECSServiceStack("ECSServiceStack");          
@@ -48,6 +49,19 @@ namespace Ecsclustercdk
         private static void createRolesStack(string stackName)
         {
             new RolesStack(_Application, stackName, new CreateRolesStackRequest
+            {
+                CodeBuildServiceRoleName = CloudConfiguration.Instance.CodeBuildServiceRoleName,
+                CodePipelineServiceRoleName = CloudConfiguration.Instance.CodePipelineServiceRoleName,
+                CodePipelineBucketName = CloudConfiguration.Instance.CodePipelineBucketName,
+                AccountId = CloudConfiguration.Instance.AccountId,
+                CodePipelineBucketKMSKeyGuid = CloudConfiguration.Instance.BucketKmsKeyGuid,
+                TaskExecutionRoleName = CloudConfiguration.Instance.TaskExecutionRoleName
+            });
+        }
+
+        private static void createRolesPolicyStack(string stackName)
+        {
+            new RolesPolicyStack(_Application, stackName, new CreateRolesPolicyStackRequest
             {
                 CodeBuildServiceRoleName = CloudConfiguration.Instance.CodeBuildServiceRoleName,
                 CodePipelineServiceRoleName = CloudConfiguration.Instance.CodePipelineServiceRoleName,
@@ -97,6 +111,7 @@ namespace Ecsclustercdk
             {
                 AccountId = CloudConfiguration.Instance.AccountId,
                 VpcId = CloudConfiguration.Instance.VpcId,
+                ClusterName = CloudConfiguration.Instance.ECSClusterName,
                 SubnetIdList = CloudConfiguration.Instance.BackendSubnetIdList,
                 BuildProjectSecurityGroupId = CloudConfiguration.Instance.CodeBuildSecurityGroupId,
                 RepositoryConnection = CloudConfiguration.Instance.RepositoryConnection,

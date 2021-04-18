@@ -17,6 +17,7 @@ namespace Ecsclustercdk
     public class CreateEcsCodePipelineStackRequest
     {
         public string VpcId { get; set; }
+        public string ClusterName { get; set; }
         public string[] SubnetIdList { get; set; }      
         public string BuildProjectSecurityGroupId { get; set; }
         public RepositoryConnection RepositoryConnection { get; set; }
@@ -55,7 +56,7 @@ namespace Ecsclustercdk
                 BuildProjectDescription = "Build project for Product Service",
                 BuildSpecLocation = "BuildSpec/PaymentManagerService.yml",
                 CodePipelineProjectName = "ProductServicePipeline",
-                ClusterName = "ecscluster",
+                ClusterName =_Request.ClusterName,
                 ServiceName = "PaymentService"
             };
 

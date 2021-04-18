@@ -36,8 +36,8 @@ namespace Ecsclustercdk
                 SecurityGroupIngress = new CfnSecurityGroup.IngressProperty[]
                {                 
 
-                    new CfnSecurityGroup.IngressProperty{CidrIp = "10.201.8.68/32", Description = "Ingress to port 80", IpProtocol = "tcp", FromPort = 80, ToPort = 80 },
-                    new CfnSecurityGroup.IngressProperty{CidrIp = "10.201.8.68/32", Description = "Ingress to port 443", IpProtocol = "tcp", FromPort = 443, ToPort = 443 },
+                    new CfnSecurityGroup.IngressProperty{CidrIp = "209.190.161.36/32", Description = "Ingress to port 80", IpProtocol = "tcp", FromPort = 80, ToPort = 80 },
+                    new CfnSecurityGroup.IngressProperty{CidrIp = "209.190.161.36/32", Description = "Ingress to port 443", IpProtocol = "tcp", FromPort = 443, ToPort = 443 },
                },
             };
 
@@ -46,18 +46,18 @@ namespace Ecsclustercdk
 
         private void createECSServiceSecurityGroup()
         {
-            var dbsecurityGroupProps = new CfnSecurityGroupProps
+            var securityGroupProps = new CfnSecurityGroupProps
             {
                 VpcId = _Request.VpcId,
                 GroupDescription = "Security Group ECS Services",
                 SecurityGroupIngress = new CfnSecurityGroup.IngressProperty[]
                 {
                     new CfnSecurityGroup.IngressProperty { IpProtocol = "tcp", FromPort = 80, ToPort = 80, SourceSecurityGroupId = _CfnPublicAlbsecurityGroup.Ref },
-                    new CfnSecurityGroup.IngressProperty { IpProtocol = "tcp", FromPort = 443, ToPort = 443, SourceSecurityGroupId = _CfnPublicAlbsecurityGroup.Ref },                   
+                    new CfnSecurityGroup.IngressProperty { IpProtocol = "tcp", FromPort = 5000, ToPort = 5000, SourceSecurityGroupId = _CfnPublicAlbsecurityGroup.Ref },                   
                 }
             };
 
-            _CfnEcsServiceSecurityGroup = new CfnSecurityGroup(this, "ECSServiceSecurityGroup", dbsecurityGroupProps);
+            _CfnEcsServiceSecurityGroup = new CfnSecurityGroup(this, "ECSServiceSecurityGroup", securityGroupProps);
         }
         private void createDBSecurityGroup()
         {
