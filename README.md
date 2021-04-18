@@ -174,6 +174,43 @@
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
+ # Un-deployment (destroying the stack)
+ 
+ **Please un-deploy the stack in the reverse order of deployment or as per the dependencies**
+ 
+ * `cdk destroy ECSCodepipelineStack`
+ 
+ ![CodePipelineDestroy](https://user-images.githubusercontent.com/20775313/115153214-62e86980-a092-11eb-96f4-1d3ac3a5001a.PNG)
+
+* `cdk destroy ECSServiceStack`
+
+![ECSServiceStackDestroy](https://user-images.githubusercontent.com/20775313/115153229-785d9380-a092-11eb-91e2-789b27ea1eb1.PNG)
+
+* `cdk destroy ECSClusterStack`
+
+![ECSClusterStackDestroy](https://user-images.githubusercontent.com/20775313/115153249-8ca19080-a092-11eb-84c4-145265ff0c7b.PNG)
+
+ * `cdk destroy TaskDefinitionStack`
+
+![TaskDefinitionStackDestroy](https://user-images.githubusercontent.com/20775313/115153265-9dea9d00-a092-11eb-98a0-c412975eac3f.PNG)
+
+ * `cdk destroy RolesStack`
+ 
+ ![RolesStackDestroy](https://user-images.githubusercontent.com/20775313/115153284-ba86d500-a092-11eb-916f-1916a01b8892.PNG)
+ 
+ * `cdk destroy BucketStack`
+
+![S3BucketStackDestroy](https://user-images.githubusercontent.com/20775313/115153303-d4281c80-a092-11eb-8b62-7b5c68580cf9.PNG)
+
+* `cdk destroy KMSKeyStack`
+
+![KMSKeyStack](https://user-images.githubusercontent.com/20775313/115153319-ec983700-a092-11eb-8580-854dab113fa0.PNG)
+
+* `cdk destroy SecurityGroupStack`
+
+![SecurityGroupStackDestroy](https://user-images.githubusercontent.com/20775313/115153337-03d72480-a093-11eb-9e3f-627847a19def.PNG)
+
+
 
 
 
