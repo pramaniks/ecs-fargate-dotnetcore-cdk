@@ -58,12 +58,12 @@
 
 # Deployment
 * cd to cdk.json file under src directory
-  * cd C:\ecs-fargate-dotnetcore-cdk\src\ecsclustercdk\
-  * cdk.json file has the information of which project needs to be built
-  * `{
+* cd C:\ecs-fargate-dotnetcore-cdk\src\ecsclustercdk\
+* cdk.json file has the information of which project needs to be built
+* `{
   "app": "dotnet run -p ecsclustercdk/ecsclustercdk.csproj",
   "profile" : "default"
    }`
-  * Run command `dotnet build`
+* Run command `dotnet build`
     * ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
 
