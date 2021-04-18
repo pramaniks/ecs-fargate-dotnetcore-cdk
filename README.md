@@ -68,8 +68,8 @@
 ![image](https://user-images.githubusercontent.com/20775313/115144172-d83f4480-a068-11eb-88a4-3fa1ddabbd88.png)
 
 * The cloud deployment settings looks like this:
-  * `    {
-  "    EnvironmentQualifier" :  "Dev",
+  * `    {\
+  "    EnvironmentQualifier" :  "Dev",\
       "Dev": {
         "AccountId": "714911308443",
         "Region": "us-east-2",
