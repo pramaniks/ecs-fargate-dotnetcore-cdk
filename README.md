@@ -204,7 +204,8 @@
 
 * `cdk destroy KMSKeyStack`
 
-![KMSKeyStack](https://user-images.githubusercontent.com/20775313/115153319-ec983700-a092-11eb-8580-854dab113fa0.PNG)
+![KMSKeyStackDestroy](https://user-images.githubusercontent.com/20775313/115153390-4567cf80-a093-11eb-9083-53ab6a938b3f.PNG)
+
 
 * `cdk destroy SecurityGroupStack`
 
