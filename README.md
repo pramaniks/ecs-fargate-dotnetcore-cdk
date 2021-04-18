@@ -168,6 +168,8 @@
  
  * Now go to the code pipeline for that service and click on Release Change, now the code pipeline executes all the steps successfully.
  
+ ![CodePipelineSuccessfulMessage](https://user-images.githubusercontent.com/20775313/115151252-b4402b00-a089-11eb-8127-3b8c4a56ea4f.PNG)
+ 
 
 
 
