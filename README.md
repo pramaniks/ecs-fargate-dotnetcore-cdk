@@ -28,7 +28,7 @@
 * This project will also demonstrate how to create buildspec.yml file for each microservice project which will do following operations:
   * Build the .net core project with the restoring packages.
   * Generate the build artifacts.
-  * Create the docher image from the build.
+  * Create the docker image from the build.
   * Push the docker image to AWS ECR image repository.
   * Push the build artifacts in S3 bucket.
 * The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
