@@ -136,7 +136,7 @@
    
 * Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , as the service was deployed with task desired count as "0"
   
-  :confounded:  :confounded:  :confounded:  :confounded:  :confounded:
+  # :confounded:  :confounded:  :confounded:  :confounded:  :confounded:
 
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
