@@ -59,9 +59,9 @@
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
  
- /
- /
- /
+<br />
+<br />
+<br />
  
 # Deployment :construction_worker:
 * cd to cdk.json file under src directory
