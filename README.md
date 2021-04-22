@@ -181,6 +181,8 @@ var CfnServiceProps = new CfnServiceProps\
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
+ :clap: :clap: :clap: :clap: :clap:
+ 
  # Un-deployment (destroying the stack)
  
  **Please un-deploy the stack in the reverse order of deployment or as per the dependencies**
