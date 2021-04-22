@@ -33,9 +33,15 @@
   * Push the build artifacts in S3 bucket.
 * The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
 
+<br />
+<br />
+<br />
 # Architecture diagram for deploying microservices on AWS ECS serverless cluster: :gem:
 ![ECSCluster](https://user-images.githubusercontent.com/20775313/114203255-9ed64d00-9975-11eb-932b-354840173bdb.jpeg)
 
+<br />
+<br />
+<br />
 # Creating deployment environment on windows machine: :hammer:
  ###### **Please open powershell as an administrator to execute following commands:**
 * Chocolatey installation - A package manager for windows environment
@@ -49,6 +55,9 @@
  * Install AWS CDK globally using following command:
    * `npm install -g aws-cdk` and check the version using command `cdk --version` after installation.
 
+<br />
+<br />
+<br />
 # Configuring AWS credentials on local machine
 * On powershell execute command `aws configure` and please fill in **Access Key Id**, **SecretKey** and **AWS region**
 ![image](https://user-images.githubusercontent.com/20775313/114186138-1e5b2080-9964-11eb-974f-a8c76772f93a.png)
