@@ -51,9 +51,7 @@
  * Install AWS CDK globally using following command:
    * `npm install -g aws-cdk` and check the version using command `cdk --version` after installation.
 
-<br />
-<br />
-<br />
+
 # Configuring AWS credentials on local machine
 * On powershell execute command `aws configure` and please fill in **Access Key Id**, **SecretKey** and **AWS region**
 ![image](https://user-images.githubusercontent.com/20775313/114186138-1e5b2080-9964-11eb-974f-a8c76772f93a.png)
