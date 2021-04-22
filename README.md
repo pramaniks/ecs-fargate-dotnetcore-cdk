@@ -55,7 +55,7 @@
 * Once aws configure is completed you can see credentials file created under your user profile C:\Users\username\aws\
 * Open the credentials file via file editor and add **aws_session_token** attribute as well.
 
-# :imp:
+# :skull:
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
 
@@ -134,14 +134,16 @@
 
    ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
    
-* Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , as the service was deployed with task desired count as "0"
+    # :exclamation:  :exclamation:  :exclamation:  :exclamation:  :exclamation:
+* Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? # :thought_balloon:
+* Do you remember we deployed the Service Stack with task desired count as "0" # :bulb:
   
-  # :confounded:  :confounded:  :confounded:  :confounded:  :confounded:
+
 
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
 
-* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s)\
+* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s) \
 var CfnServiceProps = new CfnServiceProps\
             {\
                 Cluster = _Request.ECSClusterName,\
