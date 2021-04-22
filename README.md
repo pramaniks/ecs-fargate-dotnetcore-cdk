@@ -59,10 +59,10 @@
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
  
+ /
+ /
+ /
  
- 
-
-
 # Deployment :construction_worker:
 * cd to cdk.json file under src directory
 * cd C:\ecs-fargate-dotnetcore-cdk\src\ecsclustercdk\
@@ -139,14 +139,12 @@
    
    
    
-# Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? :thought_balloon: :thought_balloon: :thought_balloon:
-
-
-
+# After ECS code pipeline stack is deployed you can see Code deploy stage in Code pipeline for the new service will be in error state , but why ?? :thought_balloon: 
  
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
 
+/
 # Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
 
 
@@ -193,7 +191,10 @@ var CfnServiceProps = new CfnServiceProps\
  
  # Service is now up and running :clap: :clap: :tada: :tada:
  
- 
+ /
+ /
+ /
+ /
  
  
  # Un-deployment (destroying the stack) :electric_plug:
