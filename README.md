@@ -58,6 +58,9 @@
 # :skull:
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
+ 
+ 
+ 
 
 
 # Deployment :construction_worker:
@@ -148,7 +151,7 @@
 
 
 
-* Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s) \
+* Now deploy ECSService stack again with task desired Count as "1" or whatever task instances you need for the newly created service(s) \
 var CfnServiceProps = new CfnServiceProps\
             {\
                 Cluster = _Request.ECSClusterName,\
@@ -188,7 +191,7 @@ var CfnServiceProps = new CfnServiceProps\
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
- # :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
+ # Service is now up and running :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
  
  # Un-deployment (destroying the stack) :electric_plug:
  
@@ -229,7 +232,7 @@ var CfnServiceProps = new CfnServiceProps\
 
 
 
-# Happy Coding !! :relaxed::metal::muscle:
+# Now that's all about it :relaxed:. Till then happy Coding !! :metal::muscle:
 
 
 
