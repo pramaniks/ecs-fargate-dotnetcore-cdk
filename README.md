@@ -144,7 +144,7 @@
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
 
-/
+<br />
 # Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
 
 
@@ -191,10 +191,9 @@ var CfnServiceProps = new CfnServiceProps\
  
  # Service is now up and running :clap: :clap: :tada: :tada:
  
- /
- /
- /
- /
+<br />
+<br />
+<br />
  
  
  # Un-deployment (destroying the stack) :electric_plug:
@@ -234,7 +233,8 @@ var CfnServiceProps = new CfnServiceProps\
 
 ![SecurityGroupStackDestroy](https://user-images.githubusercontent.com/20775313/115153337-03d72480-a093-11eb-9e3f-627847a19def.PNG)
 
-
+<br />
+<br />
 
 # Now that's all about it :relaxed:. Till then happy Coding !! :metal::muscle:
 
