@@ -135,6 +135,8 @@
    ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
    
 * Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , as the service was deployed with task desired count as "0"
+  
+  :confounded:
 
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
