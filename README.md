@@ -1,5 +1,5 @@
 # AWS ECS cluster fargate serverless environment
-**This document will demonstrate the what and how's of the CI/CD pipeline for dot net core microservices based on Domain driven design pattern using AWS ECS Fargate serverless cluster**
+**This document will demonstrate the what and how's of the CI/CD pipeline for dot net core microservices based on Domain driven design pattern using AWS ECS Fargate serverless cluster** :star2:
 
 # Assumptions/ Prerequisites:
 * All the domain projects are **.net core web API project types** with .net core 3.1 target framework.
