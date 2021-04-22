@@ -37,9 +37,9 @@
 # Architecture diagram for deploying microservices on AWS ECS serverless cluster: :gem:
 ![ECSCluster](https://user-images.githubusercontent.com/20775313/114203255-9ed64d00-9975-11eb-932b-354840173bdb.jpeg)
 
-<br />
-<br />
-<br />
+<br/>
+<br/>
+<br/>
 # Creating deployment environment on windows machine: :hammer:
  ###### **Please open powershell as an administrator to execute following commands:**
 * Chocolatey installation - A package manager for windows environment
