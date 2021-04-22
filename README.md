@@ -237,7 +237,7 @@ var CfnServiceProps = new CfnServiceProps\
 <br />
 <br />
 
-# Now that's all about it :relaxed:. Till then happy Coding !! :metal::muscle:
+# That's all about it!! :relaxed:. Till then happy Coding !! :metal::muscle:
 
 
 
