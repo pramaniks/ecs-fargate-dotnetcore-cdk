@@ -60,7 +60,7 @@
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
 
 
-# Deployment :point_left:
+# Deployment :construction_worker:
 * cd to cdk.json file under src directory
 * cd C:\ecs-fargate-dotnetcore-cdk\src\ecsclustercdk\
 * cdk.json file has the information of which project needs to be built
