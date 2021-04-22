@@ -191,7 +191,10 @@ var CfnServiceProps = new CfnServiceProps\
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
- # Service is now up and running :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
+ # Service is now up and running :clap: :clap: :tada: :tada:
+ 
+ 
+ 
  
  # Un-deployment (destroying the stack) :electric_plug:
  
