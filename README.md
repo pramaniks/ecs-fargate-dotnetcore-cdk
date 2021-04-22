@@ -33,7 +33,7 @@
   * Push the build artifacts in S3 bucket.
 * The build artifacts pushed to S3 bucket will be consumed by the AWS code deploy to create a deployment in ECS cluster fargate serverless environment.
 
-# Architecture diagram for deploying microservices on AWS ECS serverless cluster: :bulb:
+# Architecture diagram for deploying microservices on AWS ECS serverless cluster: :gem:
 ![ECSCluster](https://user-images.githubusercontent.com/20775313/114203255-9ed64d00-9975-11eb-932b-354840173bdb.jpeg)
 
 # Creating deployment environment on windows machine: :metal:
@@ -135,7 +135,9 @@
    ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
    
 # Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? :thought_balloon: :thought_balloon: :thought_balloon:
-# Do you remember we deployed the Service Stack with task desired count as "0"  :bulb:
+
+
+# Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
   
 
 
@@ -184,7 +186,7 @@ var CfnServiceProps = new CfnServiceProps\
  
  # :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
  
- # Un-deployment (destroying the stack)
+ # Un-deployment (destroying the stack) :electric_plug:
  
  **Please un-deploy the stack in the reverse order of deployment or as per the dependencies**
  
