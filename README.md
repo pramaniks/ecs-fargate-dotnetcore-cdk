@@ -134,15 +134,19 @@
 
    ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
    
+   
+   
 # Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? :thought_balloon: :thought_balloon: :thought_balloon:
 
 
-# Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
-  
 
-
+ 
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
+
+# Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
+
+
 
 * Now deploy ECSService stack again with service desired Count as "1" or whatever task instances you need for the newly created service(s) \
 var CfnServiceProps = new CfnServiceProps\
