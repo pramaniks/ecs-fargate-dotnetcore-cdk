@@ -52,10 +52,10 @@ namespace Ecsclustercdk
         {
             var pipelineConfiguration = new PipelineConfiguration
             {
-                BuildProjectName = "ProductBuildProject",
-                BuildProjectDescription = "Build project for Product Service",
+                BuildProjectName = "PaymentManagerBuildProject",
+                BuildProjectDescription = "Build project for Payment Service",
                 BuildSpecLocation = "BuildSpec/PaymentManagerService.yml",
-                CodePipelineProjectName = "ProductServicePipeline",
+                CodePipelineProjectName = "PaymentServicePipeline",
                 ClusterName =_Request.ClusterName,
                 ServiceName = "PaymentService"
             };
