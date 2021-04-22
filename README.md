@@ -55,7 +55,7 @@
 * Once aws configure is completed you can see credentials file created under your user profile C:\Users\username\aws\
 * Open the credentials file via file editor and add **aws_session_token** attribute as well.
 
-:imp:
+# :imp:
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
 
@@ -181,7 +181,7 @@ var CfnServiceProps = new CfnServiceProps\
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
- :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
+ # :clap: :clap: :clap: :clap: :clap: :tada: :tada: :tada: :tada:
  
  # Un-deployment (destroying the stack)
  
@@ -222,7 +222,7 @@ var CfnServiceProps = new CfnServiceProps\
 
 
 
-Happy Coding !! :relaxed::pray::muscle:
+# Happy Coding !! :relaxed::pray::muscle:
 
 
 
