@@ -147,10 +147,8 @@
 ![CodePipelineInitial_1](https://user-images.githubusercontent.com/20775313/115148537-a8e70280-a07d-11eb-9522-bd50835995f9.PNG)
 ![CodePipelineInitial_2](https://user-images.githubusercontent.com/20775313/115148542-ae444d00-a07d-11eb-80f9-3dd2733e6e5a.PNG)
 
-<br />
+
 # Do you remember we deployed the Service Stack with task desired count as "0"  :bulb: :pushpin:
-
-
 
 * Now deploy ECSService stack again with task desired Count as "1" or whatever task instances you need for the newly created service(s) \
 var CfnServiceProps = new CfnServiceProps\
