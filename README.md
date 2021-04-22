@@ -36,7 +36,7 @@
 # Architecture diagram for deploying microservices on AWS ECS serverless cluster: :bulb:
 ![ECSCluster](https://user-images.githubusercontent.com/20775313/114203255-9ed64d00-9975-11eb-932b-354840173bdb.jpeg)
 
-# Creating deployment environment on windows machine:
+:boom: # Creating deployment environment on windows machine: :boom:
  ###### **Please open powershell as an administrator to execute following commands:**
 * Chocolatey installation - A package manager for windows environment
   * `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
