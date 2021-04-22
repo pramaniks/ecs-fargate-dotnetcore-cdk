@@ -15,7 +15,7 @@
   * ECS task definitions should be created.
   * AWS Code star connection respository should be created in AWS environment.
 
-# What this project will do:
+# What this project will do: :muscle:
 * This project will be a CDK to create and deploy AWS code pipeline that will listen to any changes in the repository configured in the build project.
 * CDK will create the following resources on AWS:
   * AWS build project.
