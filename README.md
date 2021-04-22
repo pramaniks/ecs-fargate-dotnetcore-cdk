@@ -135,8 +135,8 @@
    ![ECSCodepipelineStack](https://user-images.githubusercontent.com/20775313/115148470-632a3a00-a07d-11eb-92e0-205690dcff6a.PNG)
    
     # :exclamation:  :exclamation:  :exclamation:  :exclamation:  :exclamation:
-* Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? # :thought_balloon:
-* Do you remember we deployed the Service Stack with task desired count as "0" # :bulb:
+* # Initially the **Code deploy stage** in Code pipeline for the new service will be in error state , but why ?? :thought_balloon: :thought_balloon: :thought_balloon:
+* # Do you remember we deployed the Service Stack with task desired count as "0"  :bulb:
   
 
 
