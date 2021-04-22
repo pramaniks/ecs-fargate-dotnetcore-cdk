@@ -190,7 +190,7 @@ var CfnServiceProps = new CfnServiceProps\
  
  ![DeploymentSuccessful](https://user-images.githubusercontent.com/20775313/115151331-084b0f80-a08a-11eb-9352-6002bd0622fe.PNG)
  
- # Service is now up and running :clap: :clap: :tada: :tada:
+ # Congratulations!! :clap: :clap: Service is now up and running :tada: :tada:
  
 <br />
 <br />
