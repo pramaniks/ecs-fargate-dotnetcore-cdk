@@ -58,7 +58,7 @@
 * Once aws configure is completed you can see credentials file created under your user profile C:\Users\username\aws\
 * Open the credentials file via file editor and add **aws_session_token** attribute as well.
 
-# Danger Zone :skull:
+# :skull: zone
 * **THIS IS VERY IMPORTANT WHEN DEPLOYING TO AWS ENVIRONMENT ALWAYS USE SESSION CREDENTIALS WHICH ARE SHORT LIVED AND EXPIRES AFTER AN HOUR**.
  ![image](https://user-images.githubusercontent.com/20775313/114187829-113f3100-9966-11eb-82c0-aa746c674dfd.png)
  
