@@ -82,12 +82,12 @@
 {\
   "EnvironmentQualifier" :  "Dev"\
       "Dev": {\
-        "AccountId": "714911308443",\
-        "Region": "us-east-2",\
-        "VpcId": "vpc-06a4c67ee500fdb59",\
-        "FrontendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],\
-        "BackendSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],\
-        "DatabaseSubnetIdList": [ "subnet-01e1349a99c93d1c4", "subnet-0d60780ad67a1c829" ],\
+        "AccountId": "",\
+        "Region": "",\
+        "VpcId": "",\
+        "FrontendSubnetIdList": [ "subnet-1"],\
+        "BackendSubnetIdList": [ "subnet-2" ],\
+        "DatabaseSubnetIdList": [ "subnet-3" ],\
         "CodePipelineBucketName": "samplecodepipelinebucket",\
         "CodePipelineServiceRoleName": "SampleCodePipelineRole",\
         "CodeBuildServiceRoleName": "SampleCodeBuildRole",\
@@ -97,7 +97,7 @@
         "ECSServiceSecurityGroupId": "sg-0664a4574b1dfb4c6",\
         "ECSClusterName": "samplecluster",\
         "RepositoryConnection": {\
-          "ConnectionArn": "arn:aws:codestar-connections:us-east-2:714911308443:connection/84e3bd57-26c0-41e8-a7db-c528e03f7beb",\
+          "ConnectionArn": "arn:aws:codestar-connections:us-east-2:{}:connection/84e3bd57-26c0-41e8-a7db-c528e03f7beb",\
           "RepositoryId": "pramaniks/dotnetcore-microservices-webapi",\
           "BranchName": "master"\
         }\
